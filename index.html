@@ -15,6 +15,14 @@
       <div class="row">
 	<div class="one-half column" style="margin-top: 25%">
 	  <p>Welcome to the home of Scott MacCallum and my business S C M Guru LLC. Through S C M Guru LLC I contribute to <a href="https://www.gnu.org/philosophy/free-sw.en.html">free</a> and <a href="https://opensource.org/osd-annotated">open source</a> software by writing documentation, producing videos, submitting bug reports/fixes, and developing projects of my own which I make freely available.</p>
+	  <h4 id="2020113001">Updating Software After A Stable Build</h4>
+	  <h5>November 30, 2020</h5>
+	  <ol>
+	    <li><code><b>cd /usr/src</b></code></li>
+	    <li><code><b>cvs -q up -P -d -r OPENBSD_<i>version_number</i></b></code></li>
+	    <li><code><b>cd /usr/xenocara</b></code></li>
+	    <li><code><b>cvs -q up -P -d -r OPENBSD_<i>version_number</i></b></code></li>
+	  </ol>
 	  <h4 id="2020111701">Upgrading OpenBSD Release To Stable From Source</h4>
 	  <h5>November 17, 2020</h5>
 	  <h6>Prepare The Environment</h6>
@@ -47,7 +55,7 @@
 	    <li><code><b>make install</b></code></li>
 	    <li><code><b>make clean</b></code></li>
 	  </ol>
-	  <h6>Build The Base System As Root</h6>
+	  <h6>Build The Base System</h6>
 	  <ol>
 	    <li><code><b>cd /usr/src</b></code></li>
 	    <li><code><b>make obj</b></code></li>
@@ -58,13 +66,6 @@
 	    <li><code><b>sysmerge</b></code></li>
 	    <li><code><b>cd /dev</b></code></li>
 	    <li><code><b>./MAKEDEV all</b></code></li>
-	  </ol>
-	  <h6>Update Stable After Build</h6>
-	  <ol>
-	    <li><code><b>cd /usr/src</b></code></li>
-	    <li><code><b>cvs -q up -P -d -r OPENBSD_<i>version_number</i></b></code></li>
-	    <li><code><b>cd /usr/xenocara</b></code></li>
-	    <li><code><b>cvs -q up -P -d -r OPENBSD_<i>version_number</i></b></code></li>
 	  </ol>
 	  <h4 id="2020111702">Configuring Autoboot After The Installation Of OpenBSD</h4>
 	  <h5>November 17, 2020</h5>
