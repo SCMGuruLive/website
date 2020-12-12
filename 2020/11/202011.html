@@ -25,10 +25,11 @@
 	  <img src="/images/scm.png" alt="Image of Scott" width="68" height="75">
 	  <p>Guru</p>
 	  <h4 id="log">Posts</h4>
-	  <a class="button" href="/index.html#log">Current</a>
-	  <h4 id="2020113001">Keeping A Stable Build Of OpenBSD Updated</h4>
+  	  <a class="button button-primary" href="/2010/11/202011.html#log">November</a>
+	  <a class="button" href="/index.html#log">December</a>
+	  <h5 id="2020113001">Keeping A Stable Build Of OpenBSD Updated</h5>
 	  <img src="/images/puffy.png" alt="Image of Puffy the OpenBSD mascot">
-	  <h5>November 30, 2020</h5>
+	  <h6>November 30, 2020</h6>
 	  <p>As a user that is part of wsrc group do these steps to keep a stable build of OpenBSD updated.</p>
 	  <ol>
 	    <li><code><b>cd /usr/src</b></code></li>
@@ -40,8 +41,8 @@
 	  </ol>
 	  <h4 id="2020111701">Upgrading OpenBSD Release To Stable From Source</h4>
 	  <img src="/images/puffy.png" alt="Image of Puffy the OpenBSD mascot">
-	  <h5>November 17, 2020</h5>
-	  <h6>Prepare The Environment</h6>
+	  <h6>November 17, 2020</h6>
+	  <h7>Prepare The Environment</h7>
 	  <ol>
 	    <li>Add a user to the <b>wsrc</b> group. <code><b>user mod -G <i>wsrc</i> <i>user</i></b></code> where <b><i>user</i></b> is the user that you would like to add to the <b>wsrc</b> group.</li>
 	    <li>Change to the user directory <code><b>cd /usr</b></code></li>
@@ -54,7 +55,7 @@
 	    <li>Change the xenocara directory group to wsrc <code><b>chgrp wsrc xenocara</b></code></li>
 	    <li>Change the mode on the xenocara directory to 0775 <code><b>chmod 0775 xenocara</b></code></li>
 	  </ol>
-	  <h6>Download The Source</h6>
+	  <h7>Download The Source</h7>
 	  <p>As the user that you added to the <b>wsrc</b> group, download the base system, Xorg and ports. Where <b><i>host</i></b> is the <a href="https://www.openbsd.org/anoncvs.html#CVSROOT">closest host</a> to you e.g. anoncvs4.usa.openbsd.org and the <b><i>release_number</i></b> is the version of the OpenBSD that you have installed e.g. 6_8.</p>
 	  <ol>
 	    <li><code><b>cd /usr</b></code></li>
@@ -62,7 +63,7 @@
 	    <li>Xorg <code><b>cvs -q -d anoncvs@<i>host</i>:/cvs checkout -r OPENBSD_<i>release</i>_<i>number</i> -P xenocara</b></code></li>
 	    <li>Ports <code><b>cvs -q -d anoncvs@<i>host</i>:/cvs checkout -r OPENBSD_<i>release</i>_<i>number</i> -P ports</b></code></li>
 	  </ol>
-	  <h6>Build The Generic Kernel</h6>
+	  <h7>Build The Generic Kernel</h7>
 	  <ol>
 	    <li>Change to the system architecture directory where the generic kernel configuration file is <code><b>cd /sys/arch/$(machine)/compile/GENERIC.MP</b></code></li>
 	    <li><code><b>make obj</b></code></li>
@@ -71,21 +72,21 @@
 	    <li><code><b>make install</b></code></li>
 	    <li><code><b>make clean</b></code></li>
 	  </ol>
-	  <h6>Build The Base System</h6>
+	  <h7>Build The Base System</h7>
 	  <ol>
 	    <li><code><b>cd /usr/src</b></code></li>
 	    <li><code><b>make obj</b></code></li>
 	    <li><code><b>make build</b></code></li>
 	  </ol>
-	  <h6>Make Changes To Etcetera, Variable And Devices</h6>
+	  <h7>Make Changes To Etcetera, Variable And Devices</h7>
 	  <ol>
 	    <li><code><b>sysmerge</b></code></li>
 	    <li><code><b>cd /dev</b></code></li>
 	    <li><code><b>./MAKEDEV all</b></code></li>
 	  </ol>
-	  <h4 id="2020111702">Configuring Autoboot After The Installation Of OpenBSD</h4>
+	  <h5 id="2020111702">Configuring Autoboot After The Installation Of OpenBSD</h5>
 	  <img src="/images/puffy.png" alt="Image of Puffy the OpenBSD mascot">
-	  <h5>November 17, 2020</h5>
+	  <h6>November 17, 2020</h6>
 	  <p>Here's how to configure autoboot after installing OpenBSD on an aluminum Apple PowerBook G4 and likely other Apple PowerPC computers.</p>
 	  <ol>
 	    <li>Enter Open Firmware by booting the computer while pressing the <code><b>Option</b>, <b>Command</b>, <b>O</b>, and <b>F</b></code> keys together.</li>
@@ -93,18 +94,18 @@
 	    <li>Set automatic booting <code><b>setenv auto-boot? true</b></code></li>
 	    <li>Write changes to NVRAM and reboot <code><b>reset-all</b></code></li>
 	  </ol>
-	  <h4 id="2020111703">Adding A User To A Group On OpenBSD</h4>
+	  <h5 id="2020111703">Adding A User To A Group On OpenBSD</h5>
 	  <img src="/images/puffy.png" alt="Image of Puffy the OpenBSD mascot">
-	  <h5>November 17, 2020</h5>
+	  <h6>November 17, 2020</h6>
 	  <p>The command to perform tasks on a users account is <b><i>user</i></b>. As a super user, add a user to a group by doing <code><b>user mod -G <i>group</i> <i>user</i></b></code> where <b><i>group</i></b> is the group that you would like to add a user to and <b><i>user</i></b> is the user that you would like to add to this group.</p>
-	  <h4 id="pkg">Installing Software On FreeBSD From Package</h4>
+	  <h5 id="pkg">Installing Software On FreeBSD From Package</h5>
 	  <img src="/images/beastie.png" alt="Image of Beastie the FreeBSD daemon" width="100" height="91">
-	  <h5>November 13, 2020</h5>
+	  <h6>November 13, 2020</h6>
 	  <p>The command to install a package is <b>pkg</b>. Install a package by doing <code><b>pkg install <i>package</i></b></code> where <b><i>package</i></b> is the name of the package that you would like to install.</p>
-	  <h4 id="first">First Post</h4>
-	  <h5>November 9, 2020</h5>
+	  <h5 id="first">First Post</h5>
+	  <h6>November 9, 2020</h6>
 	  <p>Today marks the day that I've returned to a simpler way of writing on the web. What you see is modern standards compliant HTML, which I've edited by hand with my favorite text editor. It's been nearly 30 years since I created my first website in a similar fashion. I'm excited to do it again!</p>
-	  <h4>May The Source Be With You</h4>
+	  <h5>May The Source Be With You</h5>
 	  <img src="/images/decss.png" alt="Image of source code" width="100" height="91">
 	  <p>The template for this site, <a href="http://getskeleton.com">Skeleton</a> was kindly made freely available by <a href="http://davegamache.com/">Dave Gamache</a>.</p>
 	  <p>This site is edited by hand using the my favorite text editor, <a href="https://www.gnu.org/software/emacs/">GNU Emacs</a>. It aims to be <a href="https://validator.w3.org/nu/?doc=http%3A%2F%2Fscm.sdf.org%2F">valid HTML5</a> and have no <a href="https://validator.w3.org/checklink?uri=scm.sdf.org&hide_type=all&depth=&check=Check">broken links</a>. If you find a bug, please <a href="https://github.com/SCMGuruLive/website/issues">report it</a>.</p>
