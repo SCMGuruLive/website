@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Web Applications</title>
+    <meta charset="utf-8">
+    <meta name="description" content="Web applications">
+    <meta name="author" content="Scott C. MacCallum">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="/css/normalize.css">
+    <link rel="stylesheet" href="/css/skeleton.css">
+    <link rel="icon" type="image/png" href="images/favicon.png">
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+	<div class="one-half column" style="margin-top: 25%">
+	  <h5 id=2021031401>Emulation</h5>
+	  <ol>
+	    <li>Link here</li>
+	  </ol>
+	</div>
+      </div>
+    </div>
+  </body>
+</html>
